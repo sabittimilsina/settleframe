@@ -1,0 +1,62 @@
+STAAD PLANE SETTLEFRAME EXAMPLE CHECK
+* ----------------------------------------------------------------------
+* Independent check of SettleFrame (CE 7405): 3-bay, 2-story example frame
+* Units: kN, m.  Joint and member numbers match SettleFrame:
+*   columns 1-4 = story 1 (F1..F4), columns 5-8 = story 2, beams 9-14
+* Load 3 imposes the coupled settlements at t = 30 years from SettleFrame.
+* Load 4 = sustained load D + 0.3L + settlement; its vertical reactions
+* should equal SettleFrame's coupled footing loads at 30 years.
+*
+* SettleFrame results to compare (magnitudes):
+*   Vertical reactions, load 1 (D):   137.5  312.5  312.5  137.5 kN
+*   Vertical reactions, load 2 (L):    46.9  106.1  106.1   46.9 kN
+*   Vertical reactions, load 3 (S):    72.2   73.9   62.9   64.6 kN
+*                                      (F1, F4 up; F2, F3 down)
+*   Vertical reactions, load 4:       223.8  270.4  281.4  216.2 kN
+*   Load 1, beam 9 end moments:        58.4 (left)   100.2 (right) kN-m
+*   Load 1, column 1 base moment:      11.7 kN-m
+*   Load 3, beam 9 end moments:       122.7 (left)   128.5 (right) kN-m
+*   Load 3, beam 11 end moments:      111.3 (left)   105.5 (right) kN-m
+*   Load 3, column 5 end moments:      72.6 (bottom)  83.3 (top)   kN-m
+* SET SHEAR below makes STAAD ignore shear deformation, as SettleFrame
+* does (Euler-Bernoulli). Delete that line to see its effect.
+* ----------------------------------------------------------------------
+SET SHEAR
+UNIT METER KN
+JOINT COORDINATES
+1 0 0 0; 2 6 0 0; 3 12 0 0; 4 18 0 0;
+5 0 4 0; 6 6 4 0; 7 12 4 0; 8 18 4 0;
+9 0 7.5 0; 10 6 7.5 0; 11 12 7.5 0; 12 18 7.5 0;
+MEMBER INCIDENCES
+1 1 5; 2 2 6; 3 3 7; 4 4 8;
+5 5 9; 6 6 10; 7 7 11; 8 8 12;
+9 5 6; 10 6 7; 11 7 8;
+12 9 10; 13 10 11; 14 11 12;
+MEMBER PROPERTY
+1 TO 8 PRIS YD 0.4 ZD 0.4
+9 TO 14 PRIS YD 0.6 ZD 0.3
+CONSTANTS
+E 2.5E+07 ALL
+POISSON 0.17 ALL
+SUPPORTS
+1 TO 4 FIXED
+LOAD 1 DEAD LOAD D
+MEMBER LOAD
+9 TO 11 UNI GY -30
+12 TO 14 UNI GY -20
+LOAD 2 LIVE LOAD L
+MEMBER LOAD
+9 TO 11 UNI GY -12
+12 TO 14 UNI GY -5
+LOAD 3 SETTLEMENT AT 30 YEARS COUPLED
+SUPPORT DISPLACEMENT LOAD
+1 FY -0.00701
+2 FY -0.02076
+3 FY -0.02461
+4 FY -0.01946
+LOAD COMBINATION 4 SUSTAINED D + 0.3L + SETTLEMENT
+1 1.0 2 0.3 3 1.0
+PERFORM ANALYSIS
+PRINT MEMBER FORCES
+PRINT SUPPORT REACTION
+FINISH

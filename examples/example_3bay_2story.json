@@ -1,0 +1,106 @@
+{
+  "frame": {
+    "bays": [
+      6.0,
+      6.0,
+      6.0
+    ],
+    "stories": [
+      4.0,
+      3.5
+    ],
+    "E_GPa": 25.0,
+    "col_b": 0.4,
+    "col_h": 0.4,
+    "beam_b": 0.3,
+    "beam_h": 0.6,
+    "col_Ifactor": 1.0,
+    "beam_Ifactor": 1.0,
+    "base": "Fixed"
+  },
+  "loads": {
+    "dead": [
+      30.0,
+      20.0
+    ],
+    "live": [
+      12.0,
+      5.0
+    ],
+    "psi_sustained": 0.3,
+    "gamma_D": 1.2,
+    "gamma_L": 1.6,
+    "gamma_S": 1.0
+  },
+  "soil": {
+    "gamma": 18.0,
+    "gamma_sat": 19.5,
+    "wt_depth": 1.0,
+    "drawdown": 1.5,
+    "drawdown_time": 5.0
+  },
+  "footings": [
+    {
+      "B": 2.0,
+      "L": 2.0,
+      "Df": 1.5,
+      "clay_top": 3.0,
+      "H": 4.0,
+      "Cc": 0.3,
+      "Cr": 0.05,
+      "e0": 0.9,
+      "OCR": 1.5,
+      "cv": 2.0,
+      "drainage": "Top & bottom",
+      "drawdown": false
+    },
+    {
+      "B": 2.0,
+      "L": 2.0,
+      "Df": 1.5,
+      "clay_top": 3.0,
+      "H": 6.0,
+      "Cc": 0.35,
+      "Cr": 0.05,
+      "e0": 0.9,
+      "OCR": 1.2,
+      "cv": 1.0,
+      "drainage": "Top only",
+      "drawdown": false
+    },
+    {
+      "B": 2.0,
+      "L": 2.0,
+      "Df": 1.5,
+      "clay_top": 3.0,
+      "H": 4.0,
+      "Cc": 0.3,
+      "Cr": 0.05,
+      "e0": 0.9,
+      "OCR": 1.5,
+      "cv": 2.0,
+      "drainage": "Top & bottom",
+      "drawdown": true
+    },
+    {
+      "B": 2.0,
+      "L": 2.0,
+      "Df": 1.5,
+      "clay_top": 3.0,
+      "H": 4.0,
+      "Cc": 0.3,
+      "Cr": 0.05,
+      "e0": 0.9,
+      "OCR": 1.5,
+      "cv": 2.0,
+      "drainage": "Top & bottom",
+      "drawdown": true
+    }
+  ],
+  "time": {
+    "t_end": 30.0,
+    "t_construction": 0.5,
+    "n_steps": 120,
+    "n_sub": 60
+  }
+}

@@ -1,0 +1,32 @@
+Check                                                                        Program     Reference    Diff.  Result
+Fixed-fixed beam, UDL: end moment (kN·m)                                    -90.0000      -90.0000    0.00%  PASS
+Fixed-fixed beam, UDL: midspan moment (kN·m)                                 45.0000       45.0000    0.00%  PASS
+Fixed-fixed beam, end settles: |end moment| (kN·m)                          450.0000      450.0000    0.00%  PASS
+Two-span beam, middle support settles: |M_B| (kN·m)                         225.0000      225.0000    0.00%  PASS
+Portal frame, beam UDL: corner moment (kN·m)                                 48.7786       48.7786    0.00%  PASS
+Portal frame, beam UDL: base moment (kN·m)                                   24.3893       24.3893    0.00%  PASS
+Portal frame, one base settles: beam moment at B (kN·m)                      40.3919       40.3919    0.00%  PASS
+Portal frame, one base settles: beam moment at C (kN·m)                      40.3919       40.3919    0.00%  PASS
+Portal frame, one base settles: base moment at D (kN·m)                      40.3919       40.3919    0.00%  PASS
+Consolidation (drained top & bottom): U at Tv = 0.05                          0.2521        0.2523    0.08%  PASS
+Consolidation (drained top & bottom): U at Tv = 0.1                           0.3565        0.3568    0.10%  PASS
+Consolidation (drained top & bottom): U at Tv = 0.2                           0.5034        0.5041    0.13%  PASS
+Consolidation (drained top & bottom): U at Tv = 0.5                           0.7621        0.7640    0.24%  PASS
+Consolidation (drained top & bottom): U at Tv = 1.0                           0.9291        0.9313    0.23%  PASS
+Consolidation (drained top only): U at Tv = 0.05                              0.2526        0.2523    0.11%  PASS
+Consolidation (drained top only): U at Tv = 0.1                               0.3570        0.3568    0.04%  PASS
+Consolidation (drained top only): U at Tv = 0.2                               0.5038        0.5041    0.05%  PASS
+Consolidation (drained top only): U at Tv = 0.5                               0.7622        0.7640    0.23%  PASS
+Consolidation (drained top only): U at Tv = 1.0                               0.9290        0.9313    0.24%  PASS
+Final consolidation settlement, normally consolidated (mm)                    8.5552        8.5547    0.01%  PASS
+Final consolidation settlement, overconsolidated, crosses sigma'p (mm)        1.4259        1.4258    0.01%  PASS
+Example frame: sum of dead-load reactions = total dead load (kN)            900.0000      900.0000    0.00%  PASS
+Example frame: sum of live-load reactions = total live load (kN)            306.0000      306.0000    0.00%  PASS
+Coupled history: sum of footing loads at end = sustained load (kN)          991.8000      991.8000    0.00%  PASS
+Settlement case: sum of vertical reactions = 0 (kN, abs.)                     1.0000        1.0000    0.00%  PASS
+Long-term coupled settlement, footing 1 vs drained equilibrium (mm)           7.1266        7.1266    0.00%  PASS
+Long-term coupled settlement, footing 2 vs drained equilibrium (mm)          16.3488       16.3488    0.00%  PASS
+Long-term coupled settlement, footing 3 vs drained equilibrium (mm)          12.5185       12.5185    0.00%  PASS
+Long-term coupled settlement, footing 4 vs drained equilibrium (mm)           6.0221        6.0221    0.00%  PASS
+
+29 of 29 checks passed.
