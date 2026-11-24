@@ -23,11 +23,9 @@ DEFAULT_FOOTING = {
 
 def example_inputs() -> dict:
     """3-bay, 2-story concrete frame. Footing 2 sits over a thicker, more compressible clay layer that
-    drains only at its top; footings 3 and 4 are affected by a water-table drawdown after 5 years."""
+    drains only at its top. No water-table drawdown (it can be added in the inputs)."""
     footings = [copy.deepcopy(DEFAULT_FOOTING) for _ in range(4)]
     footings[1].update({"H": 6.0, "Cc": 0.35, "OCR": 1.2, "cv": 1.0, "drainage": "Top only"})
-    footings[2]["drawdown"] = True
-    footings[3]["drawdown"] = True
     return {
         "frame": {
             "bays": [6.0, 6.0, 6.0],
@@ -47,7 +45,7 @@ def example_inputs() -> dict:
         "soil": {
             "gamma": 18.0, "gamma_sat": 19.5,   # kN/m^3
             "wt_depth": 1.0,                    # initial water table depth (m)
-            "drawdown": 1.5,                    # drop of the water table (m); 0 = none
+            "drawdown": 0.0,                    # drop of the water table (m); 0 = none
             "drawdown_time": 5.0,               # years after the start of construction
         },
         "footings": footings,
