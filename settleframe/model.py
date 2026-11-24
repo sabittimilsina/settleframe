@@ -49,7 +49,7 @@ def example_inputs() -> dict:
             "drawdown_time": 5.0,               # years after the start of construction
         },
         "footings": footings,
-        "time": {"t_end": 30.0, "t_construction": 0.5, "n_steps": 120, "n_sub": 60},
+        "time": {"t_end": 30.0, "t_construction": 0.0, "n_steps": 120, "n_sub": 60},
     }
 
 
