@@ -91,8 +91,8 @@ with st.expander("Inputs: the example frame is loaded. Open to change it, then p
         st.session_state.ver += 1
         st.session_state.msg = "Example loaded."
         st.rerun()
-    c2.caption("Example: 3 bays × 2 stories. F2 sits on thicker clay that drains only at the top; "
-               "the water table drops 1.5 m under F3 and F4 at year 5.")
+    c2.caption("Example: 3 bays × 2 stories. F2 sits on thicker clay that drains only at the top. "
+               "No water-table drop; you can add one in tab 3 and tick the affected footings in tab 2.")
 
     with st.form(f"inputs_{v}"):
         t1, t2, t3 = st.tabs(["1 · Frame & loads", "2 · Footings & clay", "3 · Groundwater & time"])
