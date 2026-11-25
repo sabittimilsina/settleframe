@@ -17,7 +17,7 @@ Fall 2026. Author: [Sabit Timilsina](https://sabittimilsina.github.io).
 
 ### Example result
 
-<img src="docs/problem.png" width="420" align="right" alt="Example frame and footing settlements">
+<img src="docs/problem.svg" width="420" align="right" alt="Example frame and footing settlements">
 
 A 3-bay, 2-story RC frame. Footing F2 sits on thicker clay that drains only at the top, so
 after 30 years it has settled 16 mm while the other footings settle 6–12 mm.
