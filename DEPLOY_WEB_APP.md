@@ -3,7 +3,7 @@
 The class talk needs a link the audience can open in a browser. The web version is
 `streamlit_app.py`; it uses the same solver (`settleframe/`) as the desktop program.
 
-Target link: **https://settleframe-lsu.streamlit.app**
+Target link: **https://settleframe-sabit.streamlit.app**
 (If that name is taken, pick another; then re-make the QR code, see step 5.)
 
 ## 1. Try it on your computer first (optional)
@@ -30,22 +30,22 @@ folder at the top level (not inside another folder).
 1. Go to https://share.streamlit.io and click **Continue with GitHub**. Allow access.
 2. Click **Create app → Deploy a public app from GitHub**.
 3. Repository: `<your-user>/settleframe` · Branch: `main` · Main file path: `streamlit_app.py`.
-4. **App URL**: type `settleframe-lsu`.
+4. **App URL**: type `settleframe-sabit`.
 5. Click **Deploy**. The first build takes 2–5 minutes; then the app opens.
 
 ## 4. Test it (the guidelines ask for this at least 24 h before the talk)
 - Open the link on your phone and on a second computer.
 - Change a value (e.g. Cc of F2 from 0.35 to 0.6) and press **Run analysis**; the largest
-  settlement moment should go from 128 to 164 kN·m.
+  settlement moment should go from 134 to about 160 kN·m.
 - Switch Coupled / Uncoupled and move the time slider.
 
 ## 5. QR code
 ```
 pip install qrcode pillow
-python make_qr.py https://settleframe-lsu.streamlit.app
+python make_qr.py https://settleframe-sabit.streamlit.app
 ```
 This writes `settleframe_qr.png`. Only needed if your link is different; the slides
-already have the QR code for `settleframe-lsu.streamlit.app`.
+already have the QR code for `settleframe-sabit.streamlit.app`.
 
 ## 6. On the day
 - A free app **goes to sleep after 12 hours without visitors**. Open the link yourself

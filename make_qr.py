@@ -1,6 +1,6 @@
 """Make a QR code for the web app link.
 
-Usage:  python make_qr.py https://settleframe-lsu.streamlit.app
+Usage:  python make_qr.py https://settleframe-sabit.streamlit.app
 Saves settleframe_qr.png next to this file (put it on the title and demo slides).
 Needs:  pip install qrcode pillow
 """
@@ -9,7 +9,7 @@ from pathlib import Path
 
 import qrcode
 
-url = sys.argv[1] if len(sys.argv) > 1 else "https://settleframe-lsu.streamlit.app"
+url = sys.argv[1] if len(sys.argv) > 1 else "https://settleframe-sabit.streamlit.app"
 qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=20, border=2)
 qr.add_data(url)
 qr.make(fit=True)

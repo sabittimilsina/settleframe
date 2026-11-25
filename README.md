@@ -1,14 +1,46 @@
-# SettleFrame — user guide
+# SettleFrame
+
+**Time-dependent moment redistribution in building frames due to consolidation settlement of footings**
+
+**Try it in the browser: [settleframe-sabit.streamlit.app](https://settleframe-sabit.streamlit.app)** (nothing to install)
 
 SettleFrame computes how the bending moments in a 2D building frame change over time as the
 clay under its footings consolidates. The frame is analyzed by the **direct stiffness method**.
 The clay under each footing is modeled with **1D consolidation** (Terzaghi), and the two are
 coupled at every time step by **Newton–Raphson iteration**. Dead load and live load are separate
-load cases. A water-table drawdown can be applied part-way through the building's life.
+load cases. A water-table drawdown can also be applied part-way through the building's life.
+
+Course project for CE 7405 Statically Indeterminate Structures, Louisiana State University,
+Fall 2026. Author: [Sabit Timilsina](https://sabittimilsina.github.io).
+
+![SettleFrame web app](docs/web_app.png)
+
+### Example result
+
+<img src="docs/problem.png" width="420" align="right" alt="Example frame and footing settlements">
+
+A 3-bay, 2-story RC frame. Footing F2 sits on thicker clay that drains only at the top, so
+after 30 years it has settled 16 mm while the other footings settle 6–12 mm.
+
+| At 30 years | Coupled (soil–structure interaction) | Uncoupled (footing loads fixed) |
+|---|---|---|
+| Largest settlement (F2) | 16.1 mm | 30.3 mm |
+| Max angular distortion | 1/663 | 1/237 (exceeds 1/500) |
+| Largest moment from settlement | 134 kN·m | 403 kN·m |
+
+In the coupled analysis the frame transfers about a third of F2's load to its neighbors, which
+slows F2's settlement. Ignoring this interaction overestimates the settlement moments about
+three times in this example.
+
+**Verification.** 29 checks against hand calculations and Terzaghi's solution all pass
+(`verify.py`). The same frame built in **OpenSees** with the 30-year settlements imposed gives the
+same reactions and member-end moments for all 32 values compared (`opensees/`).
+
+<br clear="right">
 
 **Two ways to use it:** the desktop program (`run_app.py`, below) or the **web version**
-(`streamlit_app.py`), which anyone can open from a link. To put the web version online, follow
-`DEPLOY_WEB_APP.md`. To run the web version on your own computer:
+(`streamlit_app.py`), which anyone can open from the link above. To put your own copy online,
+follow `DEPLOY_WEB_APP.md`. To run the web version on your own computer:
 `pip install streamlit pandas`, then `streamlit run streamlit_app.py`.
 
 ---
@@ -153,19 +185,37 @@ Every plot has the matplotlib toolbar (zoom, pan, save).
 
 ## 4. Suggested live demo (example file)
 
+The example has no water-table drawdown and no construction period, so the results are
+easy to follow. Both can be added in the inputs.
+
 1. **Load example** → Tab 1 shows a 3-bay, 2-story frame. Tab 2 shows that F2 sits on a
-   thicker clay layer that drains only at its top, and that F3–F4 are marked for drawdown.
-2. **Run analysis** → *Settlement vs time*: F2 settles most during the first years.
-   *Footing loads*: in the coupled analysis F2 sheds about a quarter of its load, mostly to the
-   end footings F1 and F4. In the uncoupled analysis the loads stay constant.
-3. Click **Before drawdown**, then **End**. The drawdown makes F3 and F4 settle. The
-   differential settlement in bay 2 reverses sign, and the settlement moment at the right
-   end of the bay-2 beams changes from negative to positive.
-4. Switch to **Uncoupled**: the differential settlements and the settlement moments are much
-   larger (peak about 300 kN·m versus about 130 kN·m). Ignoring soil–structure interaction
+   thicker clay layer that drains only at its top.
+2. **Run analysis** → the summary at 30 years (coupled): F2 settles 16.1 mm, the largest
+   angular distortion is 1/663, and the largest moment from settlement is 134 kN·m.
+3. Move the **time slider**: the settlement moments grow as the clay under F2 consolidates.
+4. *Settlement vs time*: F1, F3 and F4 finish settling in about two years; F2 keeps settling
+   for decades. *Footing loads*: in the coupled analysis F2 sheds about a third of its load
+   (344 → 233 kN), mostly to F1. In the uncoupled analysis the loads stay constant.
+5. Switch to **Uncoupled**: the largest settlement moment rises to 403 kN·m and the angular
+   distortion to 1/237, which fails the 1/500 limit. Ignoring soil–structure interaction
    overestimates the settlement moments in this case.
-5. Show **Combination** with 1.2D + 1.6L + 1.0S(t) and compare with *Dead load D*.
-6. Run `python verify.py` to show the checks.
+6. Change **Cc** of F2 from 0.35 to 0.6 and run again: the moment rises to about 160 kN·m.
+7. Show **Combination** with 1.2D + 1.6L + 1.0S(t) and compare with *Dead load D*.
+8. Run `python verify.py` to show the checks.
+
+### Verification with OpenSees
+
+`opensees/opensees_check.py` builds the example frame in OpenSeesPy (`elasticBeamColumn`
+elements, fixed bases) and imposes the 30-year coupled settlements with `sp` constraints. It
+compares the support reactions and member-end moments for D, L, S and D + 0.3L + S with
+SettleFrame's values; all 32 values match (`opensees/opensees_results.txt`).
+
+```
+pip install openseespy
+python opensees/opensees_check.py
+```
+
+`staad/` holds a STAAD.Pro input file of the same frame for a further check.
 
 ---
 
@@ -216,7 +266,9 @@ SettleFrame/
 ├── verify.py                  29 checks against hand calculations
 ├── verification_results.txt   output of verify.py
 ├── requirements.txt
-├── staad/                     STAAD.Pro check of the example frame
+├── opensees/                  OpenSees check of the example frame
+├── staad/                     STAAD.Pro input file of the example frame
+├── docs/                      images used in this README
 ├── examples/example_3bay_2story.json
 └── settleframe/
     ├── frame2d.py             direct stiffness frame solver
