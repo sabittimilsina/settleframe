@@ -513,7 +513,7 @@ class SettleFrameApp(tk.Tk):
     def load_example(self):
         self.set_inputs(example_inputs())
         self.update_previews()
-        self.status.set("Example loaded: 3-bay, 2-story frame; F2 over thicker clay; F3–F4 affected by drawdown.")
+        self.status.set("Example loaded: 3-bay, 2-story frame; F2 over thicker clay that drains only at the top.")
 
     def open_inputs(self):
         path = filedialog.askopenfilename(filetypes=[("SettleFrame inputs", "*.json"), ("All files", "*.*")])
