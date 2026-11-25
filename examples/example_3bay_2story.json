@@ -36,7 +36,7 @@
     "gamma": 18.0,
     "gamma_sat": 19.5,
     "wt_depth": 1.0,
-    "drawdown": 1.5,
+    "drawdown": 0.0,
     "drawdown_time": 5.0
   },
   "footings": [
@@ -80,7 +80,7 @@
       "OCR": 1.5,
       "cv": 2.0,
       "drainage": "Top & bottom",
-      "drawdown": true
+      "drawdown": false
     },
     {
       "B": 2.0,
@@ -94,12 +94,12 @@
       "OCR": 1.5,
       "cv": 2.0,
       "drainage": "Top & bottom",
-      "drawdown": true
+      "drawdown": false
     }
   ],
   "time": {
     "t_end": 30.0,
-    "t_construction": 0.5,
+    "t_construction": 0.0,
     "n_steps": 120,
     "n_sub": 60
   }
