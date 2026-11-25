@@ -8,7 +8,7 @@ Load cases in the input file
 1. Dead load D: 30 kN/m on floor beams, 20 kN/m on roof beams
 2. Live load L: 12 kN/m on floor beams, 5 kN/m on roof beams
 3. Settlement S: footing settlements after 30 years from SettleFrame (coupled)
-   F1 7.01 mm, F2 20.76 mm, F3 24.61 mm, F4 19.46 mm (SUPPORT DISPLACEMENT LOAD)
+   F1 7.08 mm, F2 16.12 mm, F3 12.44 mm, F4 6.02 mm (SUPPORT DISPLACEMENT LOAD)
 4. Combination D + 0.3L + S (the sustained load plus settlement)
 
 ## Steps
@@ -28,7 +28,7 @@ Load cases in the input file
    moments drop when shear deformation is included (a good point for the discussion).
 
 What to expect: with SET SHEAR, differences should be well under 0.5%.
-The load 4 reactions (about 223.8, 270.4, 281.4, 216.2 kN) should equal SettleFrame's
+The load 4 reactions (see settleframe_values.csv, load 4) should equal SettleFrame's
 coupled footing loads at 30 years. That checks the coupling equation P = P0 - C s.
 
 For the slides: a screenshot of the STAAD model with the bending moment diagram for load 3

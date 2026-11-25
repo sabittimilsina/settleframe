@@ -7,14 +7,14 @@ load case,quantity,SettleFrame
 2 Live L,"Reaction FY, joint 2 (kN)",106.1
 2 Live L,"Reaction FY, joint 3 (kN)",106.1
 2 Live L,"Reaction FY, joint 4 (kN)",46.9
-3 Settlement S,"Reaction FY, joint 1 (kN)",72.19
-3 Settlement S,"Reaction FY, joint 2 (kN)",-73.94
-3 Settlement S,"Reaction FY, joint 3 (kN)",-62.9
-3 Settlement S,"Reaction FY, joint 4 (kN)",64.65
-4 D+0.3L+S,"Reaction FY, joint 1 (kN)",223.76
-4 D+0.3L+S,"Reaction FY, joint 2 (kN)",270.39
-4 D+0.3L+S,"Reaction FY, joint 3 (kN)",281.42
-4 D+0.3L+S,"Reaction FY, joint 4 (kN)",216.22
+3 Settlement S,"Reaction FY, joint 1 (kN)",74.47
+3 Settlement S,"Reaction FY, joint 2 (kN)",-111.56
+3 Settlement S,"Reaction FY, joint 3 (kN)",-0.38
+3 Settlement S,"Reaction FY, joint 4 (kN)",37.47
+4 D+0.3L+S,"Reaction FY, joint 1 (kN)",226.04
+4 D+0.3L+S,"Reaction FY, joint 2 (kN)",232.77
+4 D+0.3L+S,"Reaction FY, joint 3 (kN)",343.95
+4 D+0.3L+S,"Reaction FY, joint 4 (kN)",189.04
 1 Dead D,Member 1 start MZ (kN-m),-11.66
 1 Dead D,Member 1 end MZ (kN-m),-22.9
 1 Dead D,Member 5 start MZ (kN-m),-35.49
@@ -23,11 +23,11 @@ load case,quantity,SettleFrame
 1 Dead D,Member 9 end MZ (kN-m),-100.25
 1 Dead D,Member 11 start MZ (kN-m),100.25
 1 Dead D,Member 11 end MZ (kN-m),-58.39
-3 Settlement S,Member 1 start MZ (kN-m),-12.74
-3 Settlement S,Member 1 end MZ (kN-m),-50.11
-3 Settlement S,Member 5 start MZ (kN-m),-72.58
-3 Settlement S,Member 5 end MZ (kN-m),-83.34
-3 Settlement S,Member 9 start MZ (kN-m),122.69
-3 Settlement S,Member 9 end MZ (kN-m),128.47
-3 Settlement S,Member 11 start MZ (kN-m),-111.32
-3 Settlement S,Member 11 end MZ (kN-m),-105.49
+3 Settlement S,Member 1 start MZ (kN-m),-21.66
+3 Settlement S,Member 1 end MZ (kN-m),-41.68
+3 Settlement S,Member 5 start MZ (kN-m),-74.19
+3 Settlement S,Member 5 end MZ (kN-m),-83.71
+3 Settlement S,Member 9 start MZ (kN-m),115.87
+3 Settlement S,Member 9 end MZ (kN-m),133.86
+3 Settlement S,Member 11 start MZ (kN-m),-62.29
+3 Settlement S,Member 11 end MZ (kN-m),-70.78

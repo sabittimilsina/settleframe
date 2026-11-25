@@ -10,14 +10,14 @@ STAAD PLANE SETTLEFRAME EXAMPLE CHECK
 * SettleFrame results to compare (magnitudes):
 *   Vertical reactions, load 1 (D):   137.5  312.5  312.5  137.5 kN
 *   Vertical reactions, load 2 (L):    46.9  106.1  106.1   46.9 kN
-*   Vertical reactions, load 3 (S):    72.2   73.9   62.9   64.6 kN
+*   Vertical reactions, load 3 (S):    74.5  111.6    0.4   37.5 kN
 *                                      (F1, F4 up; F2, F3 down)
-*   Vertical reactions, load 4:       223.8  270.4  281.4  216.2 kN
+*   Vertical reactions, load 4:       226.0  232.8  343.9  189.0 kN
 *   Load 1, beam 9 end moments:        58.4 (left)   100.2 (right) kN-m
 *   Load 1, column 1 base moment:      11.7 kN-m
-*   Load 3, beam 9 end moments:       122.7 (left)   128.5 (right) kN-m
-*   Load 3, beam 11 end moments:      111.3 (left)   105.5 (right) kN-m
-*   Load 3, column 5 end moments:      72.6 (bottom)  83.3 (top)   kN-m
+*   Load 3, beam 9 end moments:       115.9 (left)   133.9 (right) kN-m
+*   Load 3, beam 11 end moments:      62.3 (left)   70.8 (right) kN-m
+*   Load 3, column 5 end moments:      74.2 (bottom)  83.7 (top)   kN-m
 * SET SHEAR below makes STAAD ignore shear deformation, as SettleFrame
 * does (Euler-Bernoulli). Delete that line to see its effect.
 * ----------------------------------------------------------------------
@@ -50,10 +50,10 @@ MEMBER LOAD
 12 TO 14 UNI GY -5
 LOAD 3 SETTLEMENT AT 30 YEARS COUPLED
 SUPPORT DISPLACEMENT LOAD
-1 FY -0.00701
-2 FY -0.02076
-3 FY -0.02461
-4 FY -0.01946
+1 FY -0.00708
+2 FY -0.01612
+3 FY -0.01244
+4 FY -0.00602
 LOAD COMBINATION 4 SUSTAINED D + 0.3L + SETTLEMENT
 1 1.0 2 0.3 3 1.0
 PERFORM ANALYSIS
