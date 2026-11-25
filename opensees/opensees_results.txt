@@ -1,0 +1,34 @@
+Quantity                                      SettleFrame     OpenSees   Diff %
+Reaction FY, joint 1 (D), kN                     137.5019     137.5019   0.000000
+Reaction FY, joint 2 (D), kN                     312.4981     312.4981   0.000000
+Reaction FY, joint 3 (D), kN                     312.4981     312.4981   0.000000
+Reaction FY, joint 4 (D), kN                     137.5019     137.5019   0.000000
+Reaction FY, joint 1 (L), kN                      46.9017      46.9017   0.000000
+Reaction FY, joint 2 (L), kN                     106.0983     106.0983   0.000000
+Reaction FY, joint 3 (L), kN                     106.0983     106.0983   0.000000
+Reaction FY, joint 4 (L), kN                      46.9017      46.9017   0.000000
+Reaction FY, joint 1 (S), kN                      74.4673      74.4673   0.000000
+Reaction FY, joint 2 (S), kN                    -111.5560    -111.5560   0.000000
+Reaction FY, joint 3 (S), kN                      -0.3794      -0.3794   0.000000
+Reaction FY, joint 4 (S), kN                      37.4681      37.4681   0.000000
+Reaction FY, joint 1 (D+0.3L+S), kN              226.0398     226.0398   0.000000
+Reaction FY, joint 2 (D+0.3L+S), kN              232.7716     232.7716   0.000000
+Reaction FY, joint 3 (D+0.3L+S), kN              343.9481     343.9481   0.000000
+Reaction FY, joint 4 (D+0.3L+S), kN              189.0405     189.0405   0.000000
+M, member 1 start (D), kN-m                      -11.6628     -11.6628   0.000000
+M, member 1 end (D), kN-m                        -22.9024     -22.9024   0.000000
+M, member 5 start (D), kN-m                      -35.4921     -35.4921   0.000000
+M, member 5 end (D), kN-m                        -33.9879     -33.9879   0.000000
+M, member 9 start (D), kN-m                       58.3945      58.3945   0.000000
+M, member 9 end (D), kN-m                       -100.2477    -100.2477   0.000000
+M, member 11 start (D), kN-m                     100.2477     100.2477   0.000000
+M, member 11 end (D), kN-m                       -58.3945     -58.3945   0.000000
+M, member 1 start (S), kN-m                      -21.6617     -21.6617   0.000000
+M, member 1 end (S), kN-m                        -41.6782     -41.6782   0.000000
+M, member 5 start (S), kN-m                      -74.1913     -74.1913   0.000000
+M, member 5 end (S), kN-m                        -83.7136     -83.7136   0.000000
+M, member 9 start (S), kN-m                      115.8695     115.8695   0.000000
+M, member 9 end (S), kN-m                        133.8580     133.8580   0.000000
+M, member 11 start (S), kN-m                     -62.2882     -62.2882   0.000000
+M, member 11 end (S), kN-m                       -70.7793     -70.7793   0.000000
+Largest difference: 0.000000 %  (32 values)
